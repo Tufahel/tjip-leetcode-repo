@@ -1,20 +1,20 @@
 class Solution {
 public:
-    bool isAnagram(string s, string t) {
-        //TC: O(N)
-        //MC: O(1)
-        if (s.size() != t.size()) return false;
-        vector<int> characterCount(26, 0);
+    //TC: O(N)
+    //MC: O(1)
+    static const int BASE = 997;
+    static const long long MOD = 101103107109113LL;
+
+    long long getHash(string &s){
+        long long hash = 1;
         for(auto character : s){
-            characterCount[character - 'a']++;
+            hash *= (BASE + character);
+            if(hash >= MOD) hash %= MOD;
         }
-        for(auto character : t){
-            characterCount[character - 'a']--;
-        }
-        for(int index = 0; index < 26; index++){
-            if (characterCount[index] != 0) return false;
-        }
-        return true;
+        return hash;
+    }
+    bool isAnagram(string s, string t) {
+        return getHash(s) == getHash(t);
 
     }
 };
