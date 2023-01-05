@@ -8,6 +8,8 @@
  */
 class Solution {
 public:
+    // TC: O(N), N = size of a list.
+    // MC: O(1)
     void deleteNode(ListNode* deleteNode) {
         auto nxt = deleteNode -> next;
         deleteNode -> val = deleteNode -> next -> val;

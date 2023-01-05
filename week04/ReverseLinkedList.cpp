@@ -10,6 +10,8 @@
  */
 class Solution {
 public:
+    // TC: O(N), N = size of a list.
+    // MC: O(1)
     ListNode* reverseList(ListNode* head) {
         auto currentNode = head;
         ListNode* previous = NULL;

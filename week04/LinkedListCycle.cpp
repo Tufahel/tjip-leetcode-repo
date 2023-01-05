@@ -8,6 +8,8 @@
  */
 class Solution {
 public:
+    // TC: O(N), N = size of a list.
+    // MC: O(1)
     bool hasCycle(ListNode *head) {
         if(head == NULL) return false;
         ListNode* slow = head;
